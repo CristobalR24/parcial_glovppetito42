@@ -1,0 +1,2 @@
+rootProject.name = "AppParcialKQuiel_LSaldana_CRodriguez"
+include ':app'

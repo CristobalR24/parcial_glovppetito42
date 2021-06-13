@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4aa96c"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="100dp"
+        android:text="Glovppetito42 Eats"
+        android:textAlignment="center"
+        android:fontFamily="@font/tt_norms_pro_bold"
+        android:textColor=" #564a4a"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50sp"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:text="Usuario"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/lblusuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/tt_norms_pro_italic"
+        android:textColor="@color/black"
+        android:background="#9fe6a0"
+        android:textColorHint="#8A7676"
+        android:padding="5sp"
+        android:inputType="text"
+        android:hint="Coloque su correo electronico"
+        android:imeOptions="actionNext"
+        android:drawableEnd="@drawable/ic_user"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:text="Contraseña"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/lblpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/tt_norms_pro_italic"
+        android:hint="******"
+        android:textColorHint="#8A7676"
+        android:inputType="textPassword"
+        android:background="#9fe6a0"
+        android:padding="5dp"
+        android:imeOptions="actionDone"
+        android:drawableEnd="@drawable/ic_pass"
+        />
+
+    <Button
+        android:id="@+id/ingresar"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:textColor="@color/black"
+        android:backgroundTint="#f55c47"
+        android:text="Ingresar"
+        android:onClick="ValidarUsuario"/>
+
+</LinearLayout>

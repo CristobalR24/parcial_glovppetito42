@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4AA96C">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:textColor="#564A4A"
+        android:paddingTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crear usuario"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:textColor="#221D1D"
+        android:textSize="20sp"
+        android:layout_marginTop="10sp"
+        android:text="Nombre"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/lblnombre"
+        android:background="#9fe6a0"
+        android:layout_marginTop="10dp"
+        android:padding="5sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:imeOptions="actionNext"/>
+
+
+    <TextView
+        android:textColor="#221D1D"
+        android:textSize="20dp"
+        android:layout_marginTop="10sp"
+        android:text="Correo"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/lblcorreo"
+        android:background="#9fe6a0"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:padding="5sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:imeOptions="actionNext"/>
+
+    <TextView
+        android:textColor="#221D1D"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:text="Contraseña"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/lblpass"
+        android:background="#9fe6a0"
+        android:textColor="@color/black"
+        android:layout_marginTop="10sp"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:imeOptions="actionDone"/>
+
+    <RadioGroup
+        android:layout_marginTop="20dp"
+        android:id="@+id/lblTipoUsuario"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/lblUserAd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#221D1D"
+            android:buttonTint="#941605"
+            android:text="Administrador" />
+        <RadioButton
+            android:id="@+id/lblUserNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#221D1D"
+            android:buttonTint="#941605"
+            android:text="Consumidor" />
+
+    </RadioGroup>
+
+    <Button
+        android:backgroundTint="#f55C47"
+        android:text="Crear usuario"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:onClick="InsertarUsuario"
+        />
+
+</LinearLayout>
