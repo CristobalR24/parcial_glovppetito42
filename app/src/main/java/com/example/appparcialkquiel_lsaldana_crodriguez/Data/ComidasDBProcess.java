@@ -5,8 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.appparcialkquiel_lsaldana_crodriguez.Entidades.Receta;
 import com.example.appparcialkquiel_lsaldana_crodriguez.Entidades.Usuario;
 import com.example.appparcialkquiel_lsaldana_crodriguez.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ComidasDBProcess {
     ComidasDBHelper _db;
@@ -42,11 +46,9 @@ public class ComidasDBProcess {
         db.insert("Usuarios",null,datos);
 
         db.close();
-      //  return true;
         }
     }
     catch(Exception x){}
-    //return false;
     }
 
     public Boolean ValidarUsuario(Usuario user){ //valida que el usuario y la contraseña coincidan
@@ -79,6 +81,51 @@ public class ComidasDBProcess {
         }
         catch(Exception x){}
         return TipoRequerido;
+    }
+
+    public String ObtenerNombre(Usuario user){
+        String NombreRequerido=" ";
+        try{
+            SQLiteDatabase db=_db.getReadableDatabase();
+            if(db!=null){
+                String[] Campos = new String[]{"Nombre"};
+                String[] arg = new String[]{user.getCorreo()};
+                Cursor cursor = db.query("Usuarios",Campos,"Correo=?",arg,null,null,null);
+                if(cursor.moveToFirst())
+                    NombreRequerido=cursor.getString(0);
+                db.close();
+            }
+        }
+        catch(Exception x){}
+        return NombreRequerido;
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public List<Receta> ObtenerRecetas(){
+        try{List<Receta> lstrec = new ArrayList<Receta>();
+            SQLiteDatabase db=_db.getReadableDatabase();
+            if(db!=null){
+                String[] Campos = new String[]{"Imagen","Titulo","Ingredientes","Preparacion"};
+                Cursor cursor = db.query("Recetas",Campos,null,null,null,null,null);
+                if(cursor.moveToFirst()){
+                    do{
+                        Receta receta = new Receta(
+                                //cursor.getString(0),
+                                String.valueOf(R.drawable.ic_launcher_background),
+                                cursor.getString(1),
+                                cursor.getString(2),
+                                cursor.getString(3)
+                        );
+                        lstrec.add(receta);
+                    }while(cursor.moveToNext());
+                }
+                return lstrec;
+            }
+        }
+        catch(Exception x){}
+        finally { _db.close();}
+        return null;
     }
 
 

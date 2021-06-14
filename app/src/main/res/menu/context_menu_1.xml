@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mrecetacompleta"
+        android:title="Ver Receta completa"
+        android:visible="false"/>
+    <item
+        android:id="@+id/mguardarreceta"
+        android:title="Guardar Receta"
+        android:visible="false"/>
+    <item
+        android:id="@+id/meliminareceta"
+        android:title="Eliminar Receta"
+        android:visible="false"/>
+</menu>

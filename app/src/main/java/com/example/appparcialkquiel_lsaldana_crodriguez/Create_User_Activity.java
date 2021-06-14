@@ -43,13 +43,13 @@ public class Create_User_Activity extends AppCompatActivity {
 
         if(!TextUtils.isEmpty(i_correo) && !TextUtils.isEmpty(i_contrasena) && !TextUtils.isEmpty(i_nombre)){
             if(!dbProcess.CorreoExiste(Ingresado)){//si el correo no existe en la bd significa que esta disponible
-                switch(TipoUsuario.getCheckedRadioButtonId()){
-                    case R.id.lblUserAd:i_Tipo="administrador";
-                                        break;
-                    case R.id.lblUserCo:i_Tipo="consumidor";
-                                        break;
-                    default: Toast.makeText(this.getApplicationContext(),"Debe seleccionar un tipo de usuario",Toast.LENGTH_LONG).show();
-                }
+                        switch(TipoUsuario.getCheckedRadioButtonId()){
+                            case R.id.lblUserAd:i_Tipo="administrador";
+                                                break;
+                            case R.id.lblUserCo:i_Tipo="consumidor";
+                                                break;
+                            default: Toast.makeText(this.getApplicationContext(),"Debe seleccionar un tipo de usuario",Toast.LENGTH_LONG).show();
+                        }
                 if(i_Tipo.equals("administrador") || i_Tipo.equals("consumidor"))
                     {dbProcess.GuardarUsuario(new Usuario(i_nombre,i_correo,i_contrasena,i_Tipo));
                      Toast.makeText(this.getApplicationContext(),"Usuario agregado",Toast.LENGTH_LONG).show();}

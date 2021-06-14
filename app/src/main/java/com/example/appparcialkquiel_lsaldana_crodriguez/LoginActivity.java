@@ -38,15 +38,10 @@ public class LoginActivity extends AppCompatActivity {
 
         if(dbProcess.ValidarUsuario(Ingresado)) {
             TipoT = dbProcess.ObtenerTipo(Ingresado);
-            if (TipoT.equals("administrador")) {
-                Intent i = new Intent(this.getApplicationContext(),PrincipalActivity.class);
-                i.putExtra("tipoenviado",TipoT);
-                startActivity(i);
-            } else if (TipoT.equals("consumidor")) {
-                Intent i = new Intent(this.getApplicationContext(),PrincipalActivity.class);
-                i.putExtra("tipoenviado",TipoT);
-                startActivity(i);
-            }
+            Intent i = new Intent(this.getApplicationContext(),PrincipalActivity.class);
+            i.putExtra("correoenviado",UserT);
+            i.putExtra("tipoenviado",TipoT);
+            startActivity(i);
         }
         else
             Toast.makeText(this.getApplicationContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show();
