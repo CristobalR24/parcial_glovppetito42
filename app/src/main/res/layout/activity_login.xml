@@ -2,25 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4aa96c"
+    android:background="#FFFFFF"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="100dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
         android:text="Glovppetito42 Eats"
         android:textAlignment="center"
+        android:background="#FFE033"
         android:fontFamily="@font/tt_norms_pro_bold"
-        android:textColor=" #564a4a"
+        android:textColor=" #000000"
         android:textSize="40sp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/login_imagen" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="20sp"
         android:fontFamily="@font/tt_norms_pro_medium"
         android:text="Usuario"
         android:textColor="#000000"
@@ -35,7 +45,7 @@
         android:layout_marginRight="10dp"
         android:fontFamily="@font/tt_norms_pro_italic"
         android:textColor="@color/black"
-        android:background="#9fe6a0"
+        android:background="@drawable/bordes"
         android:textColorHint="#8A7676"
         android:padding="5sp"
         android:inputType="text"
@@ -65,7 +75,7 @@
         android:hint="******"
         android:textColorHint="#8A7676"
         android:inputType="textPassword"
-        android:background="#9fe6a0"
+        android:background="@drawable/bordes"
         android:padding="5dp"
         android:imeOptions="actionDone"
         android:drawableEnd="@drawable/ic_pass"
@@ -79,9 +89,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/tt_norms_pro_medium"
+        android:fontFamily="@font/tt_norms_pro_bold"
         android:textColor="@color/black"
-        android:backgroundTint="#f55c47"
+        android:backgroundTint="#FFE033"
+        android:background="@drawable/bordes"
         android:text="Ingresar"
         android:onClick="ValidarUsuario"/>
 

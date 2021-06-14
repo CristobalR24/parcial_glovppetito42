@@ -39,9 +39,13 @@ public class LoginActivity extends AppCompatActivity {
         if(dbProcess.ValidarUsuario(Ingresado)) {
             TipoT = dbProcess.ObtenerTipo(Ingresado);
             if (TipoT.equals("administrador")) {
-                startActivity(new Intent(this.getApplicationContext(),Create_User_Activity.class));
+                Intent i = new Intent(this.getApplicationContext(),PrincipalActivity.class);
+                i.putExtra("tipoenviado",TipoT);
+                startActivity(i);
             } else if (TipoT.equals("consumidor")) {
-                Toast.makeText(this.getApplicationContext(), "Bienvenido consumidor", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(this.getApplicationContext(),PrincipalActivity.class);
+                i.putExtra("tipoenviado",TipoT);
+                startActivity(i);
             }
         }
         else

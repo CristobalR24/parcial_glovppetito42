@@ -15,23 +15,41 @@ public class ComidasDBProcess {
         _db = new ComidasDBHelper(context,"Comidas",null, R.integer.Version);
     }
 
-    public Boolean GuardarUsuario(Usuario user){
+    public Boolean CorreoExiste(Usuario user){ //valida que el correo no exista ya, cada uno debe ser unico
+        try{
+            SQLiteDatabase db=_db.getReadableDatabase();
+            if(db != null){
+                String[] Campos = new String[]{"Correo"};
+                String[] arg = new String[]{user.getCorreo()};
+                Cursor cursor = db.query("Usuarios",Campos,"Correo=?",arg,null,null,null);
+                if(cursor.moveToFirst())
+                {return true;}
+            }
+        }
+        catch(Exception x){}
+        return false;
+    }
+
+    public void GuardarUsuario(Usuario user){
     try{
         SQLiteDatabase db=_db.getWritableDatabase();
         if(db!=null){
         ContentValues datos = new ContentValues();
         datos.put("Nombre",user.getNombre());
         datos.put("Correo",user.getCorreo());
-        datos.put("Password",user.getPassword());
+        datos.put("Pass",user.getPassword());
         datos.put("Tipo",user.getTipo());
         db.insert("Usuarios",null,datos);
-        return true;}
+
+        db.close();
+      //  return true;
+        }
     }
     catch(Exception x){}
-    return false;
+    //return false;
     }
 
-    public Boolean ValidarUsuario(Usuario user){
+    public Boolean ValidarUsuario(Usuario user){ //valida que el usuario y la contraseña coincidan
         try{
             SQLiteDatabase db=_db.getReadableDatabase();
             if(db != null){
@@ -47,7 +65,7 @@ public class ComidasDBProcess {
     }
 
     public String ObtenerTipo(Usuario user){
-        String TipoRequerido="admin";
+        String TipoRequerido=" ";
         try{
             SQLiteDatabase db=_db.getReadableDatabase();
             if(db!=null){

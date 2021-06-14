@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+
+    <ImageView
+        android:layout_width="256dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/hamburguer" />
+
+    <Button
+        android:id="@+id/ver_recetas_disponibles"
+        android:background="@drawable/button"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="60dp"
+        android:drawableLeft="@drawable/buscar"
+        android:fontFamily="@font/tt_norms_pro_bold"
+        android:textAllCaps="false"
+        android:text="Ver recetas disponibles"/>
+
+
+    <Button
+        android:id="@+id/ver_recetas_guardadas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/button"
+        android:drawableLeft="@drawable/receta"
+        android:fontFamily="@font/tt_norms_pro_bold"
+        android:textAllCaps="false"
+        android:text="Ver recetas guardadas" />
+
+    <Button
+        android:id="@+id/agregar_recetas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/button"
+        android:drawableLeft="@drawable/add"
+        android:fontFamily="@font/tt_norms_pro_bold"
+        android:textAllCaps="false"
+        android:text="Agregar recetas"/>
+
+    <Button
+        android:id="@+id/anadir_usuarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/button"
+        android:drawableLeft="@drawable/add_user"
+        android:fontFamily="@font/tt_norms_pro_bold"
+        android:textAllCaps="false"
+        android:text="Añadir usuarios"
+        android:onClick="InsertarUsuario"
+        />
+
+    <TextView
+        android:id="@+id/nombre_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:text=" Glovppetito42 Eats"/>
+
+</LinearLayout>
