@@ -94,6 +94,6 @@
         android:backgroundTint="#FFE033"
         android:background="@drawable/bordes"
         android:text="Ingresar"
-        android:onClick="ValidarUsuario"/>
+        android:onClick="LoginUsuario"/>
 
 </LinearLayout>

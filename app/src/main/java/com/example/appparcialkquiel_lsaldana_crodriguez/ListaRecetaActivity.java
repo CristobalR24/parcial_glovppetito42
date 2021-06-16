@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,14 +25,15 @@ import java.util.List;
 public class ListaRecetaActivity extends AppCompatActivity {
     ListView Recipes;
     String TipoRecibido,CorreoRecibido;
+    ImageView ListaVacia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_receta);
         Intent i = getIntent();
-        TipoRecibido=i.getStringExtra("tipoenviado2");
-        CorreoRecibido=i.getStringExtra("correoenviado2");
+        TipoRecibido=i.getStringExtra("tipoenviado");
+        CorreoRecibido=i.getStringExtra("correoenviado");
         this.InitControles();
         this.MostrarRecetas();
         registerForContextMenu(Recipes);
@@ -46,9 +48,9 @@ public class ListaRecetaActivity extends AppCompatActivity {
         menu.setHeaderTitle(rec.getTitulo());
         getMenuInflater().inflate(R.menu.context_menu_1,menu);
 
+        // a partir de aqui se controlara la visibilidad de las opciones dependiendo del usuario
         MenuItem eliminar = menu.findItem(R.id.meliminareceta);
 
-        // a partir de aqui se controlara la visibilidad de las opciones dependiendo del usuario
         if(TipoRecibido.equals("administrador"))
             eliminar.setVisible(true);
         else
@@ -64,12 +66,25 @@ public class ListaRecetaActivity extends AppCompatActivity {
 
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        ComidasDBProcess dbProcess= new ComidasDBProcess(this.getApplicationContext());
+        Receta rec= (Receta)Recipes.getItemAtPosition(info.position);
+        int IDrec,IDuser;
         switch (item.getItemId()){
             case R.id.mrecetacompleta:
                 return true;
             case R.id.mguardarreceta:
+                        IDrec = dbProcess.ObtenerIdReceta(rec);
+                        IDuser = dbProcess.ObtenerIdUsuario(CorreoRecibido);
+                        if(dbProcess.RecetaYaGuardada(IDrec,IDuser))
+                            Toast.makeText(this.getApplicationContext(),"Ya guardaste esta receta",Toast.LENGTH_LONG).show();
+                        else if(dbProcess.GuardarReceta(IDrec,IDuser))
+                            Toast.makeText(this.getApplicationContext(),"Receta guardada",Toast.LENGTH_LONG).show();
                 return true;
             case R.id.meliminareceta:
+                        IDrec = dbProcess.ObtenerIdReceta(rec);
+                        dbProcess.BorrarReceta(IDrec);
+                        Toast.makeText(this.getApplicationContext(),"Receta eliminada",Toast.LENGTH_LONG).show();
+                        this.MostrarRecetas();
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -77,36 +92,24 @@ public class ListaRecetaActivity extends AppCompatActivity {
     }
 
     private void InitControles(){
-        Recipes = findViewById(R.id.lstRecetas); }
+        Recipes = findViewById(R.id.lstRecetas);
+        ListaVacia=findViewById(R.id.advertencia);}
 
-    /*private void AgregarNuevoElemento(){
-        List<Receta> opciones = this.GetElementsToListViewTemplate();
-        opciones.add(new Receta(String.valueOf(R.drawable.ic_launcher_background), "Randall", "Asi es","5 s"));
 
-        RecetasListViewAdapter adapter = new RecetasListViewAdapter(this, opciones);
-        Recipes.setAdapter(adapter);
-    }
-
-    private List<Receta> GetElementsToListViewTemplate() {
-        List<Receta> opciones = new ArrayList<>();
-
-        opciones.add(new Receta(String.valueOf(R.drawable.ic_launcher_background), "Receta 1", "",""));
-        opciones.add(new Receta(String.valueOf(R.drawable.ic_launcher_background), "Receta 2","",""));
-
-        return  opciones;
-    }
-*/
     private void MostrarRecetas(){
         try{
         ComidasDBProcess dbProcess= new ComidasDBProcess(this.getApplicationContext());
 
         List<Receta> lstrec = dbProcess.ObtenerRecetas();
 
+        if(!lstrec.isEmpty()){
         RecetasListViewAdapter adapter = new RecetasListViewAdapter(this.getApplicationContext(), lstrec);
         Recipes.setAdapter(adapter);}
+        else
+            ListaVacia.setVisibility(View.VISIBLE);
+        }
         catch (Exception e){
             Toast.makeText(this.getApplicationContext(),"Error: "+e, Toast.LENGTH_LONG).show();
         }
-
     }
 }

@@ -7,23 +7,24 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lista de Recetas"
+        android:text="Recetas guardadas"
         android:layout_gravity="center"
         android:textAlignment="center"
         android:fontFamily="@font/tt_norms_pro_bold"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:background="#FFE033"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"/>
+
     <ImageView
-        android:id="@+id/advertencia"
+        android:id="@+id/advertencia2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/advertencia"
         android:visibility="gone"/>
 
-    <ListView android:id="@+id/lstRecetas"
+    <ListView android:id="@+id/lstRecetasGuardadas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"/>

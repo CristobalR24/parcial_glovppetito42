@@ -27,16 +27,16 @@ public class LoginActivity extends AppCompatActivity {
         Contra=findViewById(R.id.lblpassword);
     }
 
-    public void ValidarUsuario(View v){ //cambiar nombre a LoginUsuario
+    public void LoginUsuario(View v){ //cambiar nombre a LoginUsuario
         try{
         String UserT,ContraT,TipoT;
         UserT=User.getText().toString();
         ContraT= Contra.getText().toString();
 
         ComidasDBProcess dbProcess= new ComidasDBProcess(this.getApplicationContext());
-        Usuario Ingresado = new Usuario("",UserT,ContraT,"");
+        Usuario Ingresado = new Usuario("",UserT,ContraT,"");//por ahora solo nos interesa validar user + password
 
-        if(dbProcess.ValidarUsuario(Ingresado)) {
+        if(dbProcess.LoginUsuario(Ingresado)) {
             TipoT = dbProcess.ObtenerTipo(Ingresado);
             Intent i = new Intent(this.getApplicationContext(),PrincipalActivity.class);
             i.putExtra("correoenviado",UserT);
