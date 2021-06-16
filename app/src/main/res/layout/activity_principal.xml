@@ -42,8 +42,8 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:layout_width="222dp"
-        android:layout_height="159dp"
+        android:layout_width="213dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:src="@drawable/hamburguer" />
@@ -108,6 +108,22 @@
         android:textAllCaps="false"
         android:text="Añadir usuarios"
         android:onClick="InsertarUsuario"
+        />
+
+    <Button
+        android:id="@+id/salir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/button"
+        android:drawableLeft="@drawable/ic_exit"
+        android:fontFamily="@font/tt_norms_pro_bold"
+        android:textAllCaps="false"
+        android:text="Cerrar sesion"
+        android:onClick="Salir"
         />
 
     <TextView

@@ -104,7 +104,5 @@ public class RecetaGuardadaActivity extends AppCompatActivity {
         catch (Exception e){ Toast.makeText(this.getApplicationContext(),"Error: "+e, Toast.LENGTH_LONG).show(); }
     }
 
-    public void Favorito(View v){
-        Toast.makeText(this.getApplicationContext(),"Auch",Toast.LENGTH_LONG).show();
-    }
+    public void Retornar(View view) {this.finish();}
 }

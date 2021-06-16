@@ -52,7 +52,8 @@ public class Create_User_Activity extends AppCompatActivity {
                         }
                 if(i_Tipo.equals("administrador") || i_Tipo.equals("consumidor"))
                     {dbProcess.GuardarUsuario(new Usuario(i_nombre,i_correo,i_contrasena,i_Tipo));
-                     Toast.makeText(this.getApplicationContext(),"Usuario agregado",Toast.LENGTH_LONG).show();}
+                     Toast.makeText(this.getApplicationContext(),"Usuario agregado",Toast.LENGTH_LONG).show();
+                     this.finish();}
 
             }
             else
@@ -63,4 +64,7 @@ public class Create_User_Activity extends AppCompatActivity {
     }
 
 
+    public void Retornar(View view) {
+        this.finish();
+    }
 }

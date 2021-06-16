@@ -22,6 +22,13 @@ public class LoginActivity extends AppCompatActivity {
         this.InitControles();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        User.setText("");
+        Contra.setText("");
+    }
+
     private void InitControles(){
         User=findViewById(R.id.lblusuario);
         Contra=findViewById(R.id.lblpassword);

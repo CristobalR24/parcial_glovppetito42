@@ -111,4 +111,6 @@ public class ListaRecetaActivity extends AppCompatActivity {
             Toast.makeText(this.getApplicationContext(),"Error: "+e, Toast.LENGTH_LONG).show();
         }
     }
+
+    public void Retornar(View view) {this.finish();}
 }

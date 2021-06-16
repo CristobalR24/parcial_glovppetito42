@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.appparcialkquiel_lsaldana_crodriguez.Data.ComidasDBProcess;
 import com.example.appparcialkquiel_lsaldana_crodriguez.Entidades.Usuario;
@@ -28,6 +29,9 @@ public class PrincipalActivity extends AppCompatActivity {
         this.ControlBotones();
         this.MensajeBienvenida();
     }
+
+    @Override
+    public void onBackPressed() { /*no hacer nada*/}
 
     private void InitControles(){
         b1=findViewById(R.id.ver_recetas_disponibles);
@@ -75,5 +79,9 @@ public class PrincipalActivity extends AppCompatActivity {
         i.putExtra("correoenviado",CorreoRecibido);
         //i.putExtra("tipoenviado",TipoRecibido);
         startActivity(i);
+    }
+
+    public void Salir(View view) {
+        this.finish();
     }
 }
