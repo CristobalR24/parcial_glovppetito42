@@ -73,7 +73,7 @@ public class PrincipalActivity extends AppCompatActivity {
     public void VerGuardadas(View view) {
         Intent i = new Intent(this.getApplicationContext(),RecetaGuardadaActivity.class);
         i.putExtra("correoenviado",CorreoRecibido);
-        i.putExtra("tipoenviado",TipoRecibido);
+        //i.putExtra("tipoenviado",TipoRecibido);
         startActivity(i);
     }
 }

@@ -55,11 +55,10 @@ public class ListaRecetaActivity extends AppCompatActivity {
             eliminar.setVisible(true);
         else
         { if(TipoRecibido.equals("consumidor"))
-        { MenuItem ver = menu.findItem(R.id.mrecetacompleta);
+           {MenuItem ver = menu.findItem(R.id.mrecetacompleta);
             MenuItem guardar = menu.findItem(R.id.mguardarreceta);
             ver.setVisible(true);
-            guardar.setVisible(true);
-        }
+            guardar.setVisible(true); }
         }
     }
 
@@ -103,7 +102,7 @@ public class ListaRecetaActivity extends AppCompatActivity {
         List<Receta> lstrec = dbProcess.ObtenerRecetas();
 
         if(!lstrec.isEmpty()){
-        RecetasListViewAdapter adapter = new RecetasListViewAdapter(this.getApplicationContext(), lstrec);
+        RecetasListViewAdapter adapter = new RecetasListViewAdapter(this.getApplicationContext(), lstrec,-1);
         Recipes.setAdapter(adapter);}
         else
             ListaVacia.setVisibility(View.VISIBLE);

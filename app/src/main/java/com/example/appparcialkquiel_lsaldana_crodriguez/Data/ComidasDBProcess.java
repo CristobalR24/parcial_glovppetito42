@@ -202,6 +202,7 @@ public class ComidasDBProcess {
                  ContentValues datos = new ContentValues();
                  datos.put("ID_user",IdUser);
                  datos.put("ID_rec",IdReceta);
+                 datos.put("Marcado",0);
                  db.insert("Recetas_Save",null,datos);
                 return true;
             }
@@ -236,6 +237,34 @@ public class ComidasDBProcess {
         catch(Exception x){}
         finally { _db.close();}
         return null;
+    }
+
+    public void LikeReceta(int IdReceta, int IdUser,int marcado){
+        SQLiteDatabase db=_db.getWritableDatabase();
+        try{
+            if(db!=null){
+                ContentValues datos = new ContentValues();
+                datos.put("Marcado",marcado);
+                db.update("Recetas_Save",datos,"ID_user="+IdUser+" AND ID_rec="+IdReceta,null);
+            }
+        }
+        catch(Exception x){}
+        finally {db.close();}
+    }
+
+    public boolean isLikeReceta(int IdReceta,int IdUser){
+        SQLiteDatabase db=_db.getReadableDatabase();
+        try{
+            if(db!=null){
+                String[] Campos = new String[]{"ID_rec"};
+                Cursor cursor = db.query("Recetas_Save",Campos,"ID_rec="+IdReceta+" AND ID_user="+IdUser+" AND Marcado=1",null,null,null,null);
+                if(cursor.moveToFirst())
+                {return true;}
+            }
+        }
+        catch(Exception x){}
+        finally {db.close();}
+        return false;
     }
 
 
