@@ -78,7 +78,7 @@
         android:fontFamily="@font/tt_norms_pro_bold"
         android:textAllCaps="false"
         android:text="Ver recetas guardadas"
-        android:onClick="VerGuardadas"/>
+        android:onClick="VerGuardadas" />
 
     <Button
         android:id="@+id/agregar_recetas"
@@ -92,7 +92,8 @@
         android:drawableLeft="@drawable/add"
         android:fontFamily="@font/tt_norms_pro_bold"
         android:textAllCaps="false"
-        android:text="Agregar recetas"/>
+        android:text="Agregar recetas"
+        android:onClick="AgregarReceta"/>
 
     <Button
         android:id="@+id/anadir_usuarios"

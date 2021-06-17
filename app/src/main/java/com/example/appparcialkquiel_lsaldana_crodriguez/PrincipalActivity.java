@@ -84,4 +84,9 @@ public class PrincipalActivity extends AppCompatActivity {
     public void Salir(View view) {
         this.finish();
     }
+
+    public void AgregarReceta(View view) {
+        Intent i = new Intent(this.getApplicationContext(),AgregarRecetaActivity.class);
+        startActivity(i);
+    }
 }

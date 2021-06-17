@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AgregarRecetaActivity"
+    android:background="#DECEB1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp"
+        android:textStyle="bold"
+        android:text="R e c e t a r i o"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Nombre completo del producto: "/>
+
+    <EditText
+        android:id="@+id/nombre_receta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F9F5FC"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Ingredientes (solo 5 ingredientes):"
+        />
+
+    <EditText
+        android:id="@+id/ingrediente_receta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F9F5FC"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preparación:"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <EditText
+        android:id="@+id/descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F9F5FC"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <Button
+        android:id="@+id/guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar Receta"
+        android:layout_gravity="center"
+        android:backgroundTint="#3BA81A"
+        android:layout_marginTop="20dp"
+        android:onClick="Guardar_Datos" />
+
+</LinearLayout>

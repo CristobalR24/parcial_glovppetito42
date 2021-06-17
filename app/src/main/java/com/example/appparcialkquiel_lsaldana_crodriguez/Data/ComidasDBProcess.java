@@ -2,6 +2,7 @@ package com.example.appparcialkquiel_lsaldana_crodriguez.Data;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
@@ -108,6 +109,7 @@ public class ComidasDBProcess {
         try{List<Receta> lstrec = new ArrayList<Receta>();
             if(db!=null){
                 String[] Campos = new String[]{"Imagen","Titulo","Ingredientes","Preparacion"};
+                // select imagen,titulo,ingredientes,preparacion FROM Recetas;
                 Cursor cursor = db.query("Recetas",Campos,null,null,null,null,null);
                 if(cursor.moveToFirst()){
                     do{
@@ -267,5 +269,43 @@ public class ComidasDBProcess {
         return false;
     }
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void AgregarReceta(String nombre, String ingrediente,String preparacion) {
+        SQLiteDatabase sq = _db.getWritableDatabase();
+        if (sq != null){
+            try{
+                ContentValues valores = new ContentValues();
+                valores.put("Imagen"," ");
+                valores.put("Titulo",nombre);
+                valores.put("Ingredientes",ingrediente);
+                valores. put("Preparacion",preparacion);
+
+                sq.insert("Recetas",null,valores);
+
+            } catch (Exception e){ }
+            finally {sq.close();}
+        }
+
+    }
+
+    public boolean RecetaYaExtiste(String nombre, String ingrediente, String preparacion){
+        SQLiteDatabase sq = _db.getReadableDatabase();
+        try{
+        if(sq!=null){
+            String[] Campos=new String[]{"ID_rec"};
+            String[] arg= new String[]{nombre,ingrediente,preparacion};
+            Cursor cursor=sq.query("Recetas",Campos,"Titulo=? AND Ingredientes=? AND Preparacion=?",arg,null,null,null);
+            if(cursor.moveToFirst()){
+                return true;
+            }
+        }
+        }
+        catch(Exception e){
+
+        }
+        finally {sq.close();}
+        return false;
+    }
 
 }

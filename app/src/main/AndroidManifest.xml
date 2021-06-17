@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppParcialKQuiel_LSaldana_CRodriguez">
-        <activity android:name=".RecetaGuardadaActivity"></activity>
+        <activity android:name=".DescripcionRecetaActivity"></activity>
+        <activity android:name=".AgregarRecetaActivity" />
+        <activity android:name=".RecetaGuardadaActivity" />
         <activity android:name=".ListaRecetaActivity" />
         <activity android:name=".PrincipalActivity" />
         <activity android:name=".Create_User_Activity" />
