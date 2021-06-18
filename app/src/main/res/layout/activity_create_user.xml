@@ -58,6 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
+        android:hint="Coloque su nombre y apellido"
         android:imeOptions="actionNext"/>
 
 
@@ -83,6 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
+        android:hint="Correo de usuario"
         android:imeOptions="actionNext"/>
 
     <TextView
@@ -107,6 +109,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
+        android:hint="Contraseña de usuario"
         android:imeOptions="actionDone"/>
 
     <RadioGroup
@@ -122,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#221D1D"
-            android:buttonTint="#941605"
+            android:buttonTint="#000000"
             android:text="Administrador" />
         <RadioButton
             android:id="@+id/lblUserCo"
@@ -130,7 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#221D1D"
-            android:buttonTint="#941605"
+            android:buttonTint="#000000"
             android:text="Consumidor" />
 
     </RadioGroup>

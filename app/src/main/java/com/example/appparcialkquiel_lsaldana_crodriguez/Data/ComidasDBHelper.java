@@ -21,11 +21,7 @@ public class ComidasDBHelper extends SQLiteOpenHelper {
         db.execSQL(NuevaTabla2);
         db.execSQL(NuevaTabla3);
         db.execSQL(PrimeraVez); //inserta por primera vez un usuario administrador inicial
-
-        /*borrar cuando la actividad guardar usuario este lista
-        db.execSQL("INSERT INTO Recetas(Imagen,Titulo,Ingredientes,Preparacion) VALUES('imagen1','Receta 1','Aqui van los ingredientes','Aqui va la preparacion')");
-        db.execSQL("INSERT INTO Recetas(Imagen,Titulo,Ingredientes,Preparacion) VALUES('imagen2','Receta 2','Aqui van los ingredientes','Aqui va la preparacion')");
-*/
+        
     }
 
     @Override

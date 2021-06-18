@@ -1,9 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DescripcionRecetaActivity">
+    android:orientation="vertical"
+    tools:context=".DescripcionRecetaActivity"
+    android:background="#FFFFFF">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFE033">
+
+        <ImageButton
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="5dp"
+            android:background="#FFE033"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:src="@drawable/ic_retorno"
+            android:onClick="Retornar"/>
+
+        <TextView
+            android:layout_marginRight="65dp"
+            android:background="#FFE033"
+            android:fontFamily="@font/tt_norms_pro_bold"
+            android:textColor="#000000"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receta completa"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:textColor="#221D1D"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:textSize="20sp"
+        android:layout_marginTop="20sp"
+        android:text="Producto:"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/nombre_receta2"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:background="@drawable/bordes"
+        android:layout_marginTop="10dp"
+        android:padding="5sp"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:backgroundTint="#FFE033"
+        android:text="Nombre del producto"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="#221D1D"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:textSize="20sp"
+        android:layout_marginTop="20sp"
+        android:textAlignment="center"
+        android:text="Ingredientes:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/ingrediente_receta2"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="64dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bordes"
+        android:textAlignment="center"
+        android:backgroundTint="#FFE033"
+        android:textSize="16sp"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:padding="5sp"
+        android:text="ingrediente 1, ingrediente 2, ingrediente 3"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:textColor="#221D1D"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:textSize="20sp"
+        android:layout_marginTop="20sp"
+        android:text="Preparación"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/descripcion2"
+        android:layout_width="match_parent"
+        android:layout_height="297dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bordes"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:gravity="start"
+        android:padding="5sp"
+        android:text="Aqui va la descripcion del producto"
+        android:textAlignment="textStart"
+        android:textColor="@color/black" />
+
+</LinearLayout>

@@ -254,7 +254,7 @@ public class ComidasDBProcess {
         finally {db.close();}
     }
 
-    public boolean isLikeReceta(int IdReceta,int IdUser){
+    public boolean isRecetaLiked(int IdReceta,int IdUser){
         SQLiteDatabase db=_db.getReadableDatabase();
         try{
             if(db!=null){

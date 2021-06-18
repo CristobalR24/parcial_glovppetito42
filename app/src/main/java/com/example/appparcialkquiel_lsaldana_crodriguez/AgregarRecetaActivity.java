@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,12 +39,19 @@ public class AgregarRecetaActivity extends AppCompatActivity {
         preparacion=descripcion.getText().toString();
         ComidasDBProcess db=new ComidasDBProcess(this.getApplicationContext());
 
-        if(db.RecetaYaExtiste(nombre,ingrediente,preparacion))
-            Toast.makeText(this.getApplicationContext(),"Esta receta ya esta en la base de datos",Toast.LENGTH_LONG).show();
+        if(!TextUtils.isEmpty(nombre) && !TextUtils.isEmpty(ingrediente) && !TextUtils.isEmpty(preparacion))
+        {   if(db.RecetaYaExtiste(nombre,ingrediente,preparacion))
+                Toast.makeText(this.getApplicationContext(),"Esta receta ya esta en la base de datos",Toast.LENGTH_LONG).show();
+            else
+                {db.AgregarReceta(nombre,ingrediente,preparacion);
+                 Toast.makeText(this.getApplicationContext(),"La receta fue agregada exitosamente",Toast.LENGTH_LONG).show();
+                 nombre_receta.setText("");
+                 ingrediente_receta.setText("");
+                 descripcion.setText("");}
+        }
         else
-            {db.AgregarReceta(nombre,ingrediente,preparacion);
-             Toast.makeText(this.getApplicationContext(),"La receta fue agregada exitosamente",Toast.LENGTH_LONG).show();
-             Intent i = new Intent(this.getApplicationContext(),ListaRecetaActivity.class);
-             startActivity(i);}
+            Toast.makeText(this.getApplicationContext(),"Debe llenar todos los campos",Toast.LENGTH_LONG).show();
     }
+
+    public void Retornar(View view) { this.finish();}
 }

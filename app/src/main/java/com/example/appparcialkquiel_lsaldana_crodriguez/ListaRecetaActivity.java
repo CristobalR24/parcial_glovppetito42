@@ -70,6 +70,13 @@ public class ListaRecetaActivity extends AppCompatActivity {
         int IDrec,IDuser;
         switch (item.getItemId()){
             case R.id.mrecetacompleta:
+                Intent i = new Intent(this.getApplicationContext(),DescripcionRecetaActivity.class);
+                Bundle b=new Bundle();
+                b.putString("titulo",rec.getTitulo());
+                b.putString("ingrediente",rec.getIngredientes());
+                b.putString("preparacion",rec.getPreparacion());
+                i.putExtras(b);
+                startActivity(i);
                 return true;
             case R.id.mguardarreceta:
                         IDrec = dbProcess.ObtenerIdReceta(rec);

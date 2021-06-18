@@ -46,7 +46,7 @@ public class RecetasListViewAdapter  extends ArrayAdapter<Receta>
 
         Receta rec= getItem(position);
         id_rec=dbProcess.ObtenerIdReceta(rec);
-        if(dbProcess.isLikeReceta(id_rec,id_user))
+        if(dbProcess.isRecetaLiked(id_rec,id_user))
             lblicono.setVisibility(View.VISIBLE);
         return(item);
     }

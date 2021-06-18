@@ -54,7 +54,7 @@ public class RecetaGuardadaActivity extends AppCompatActivity {
         MenuItem anadir= menu.findItem(R.id.mrecetalike);
         MenuItem eliminar = menu.findItem(R.id.mrecetadislike);
 
-        if(dbProcess.isLikeReceta(IDrec,IDuser))
+        if(dbProcess.isRecetaLiked(IDrec,IDuser))// si la receta ya fue "likeada" mostrara la opcion de quitarle el like
             eliminar.setVisible(true);
         else
             anadir.setVisible(true);
