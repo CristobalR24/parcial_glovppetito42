@@ -109,6 +109,7 @@ public class ComidasDBProcess {
         try{List<Receta> lstrec = new ArrayList<Receta>();
             if(db!=null){
                 String[] Campos = new String[]{"Imagen","Titulo","Ingredientes","Preparacion"};
+                // select imagen,titulo,ingredientes,preparacion FROM Recetas;
                 Cursor cursor = db.query("Recetas",Campos,null,null,null,null,null);
                 if(cursor.moveToFirst()){
                     do{
