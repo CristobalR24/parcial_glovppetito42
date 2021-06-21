@@ -72,7 +72,7 @@ public class ListaRecetaActivity extends AppCompatActivity {
             case R.id.mrecetacompleta:
                 Intent i = new Intent(this.getApplicationContext(),DescripcionRecetaActivity.class);
                 Bundle b=new Bundle();
-                b.putString("imagen",rec.getImagen());
+                b.putString("Imagen",rec.getImagen());
                 b.putString("titulo",rec.getTitulo());
                 b.putString("ingrediente",rec.getIngredientes());
                 b.putString("preparacion",rec.getPreparacion());
