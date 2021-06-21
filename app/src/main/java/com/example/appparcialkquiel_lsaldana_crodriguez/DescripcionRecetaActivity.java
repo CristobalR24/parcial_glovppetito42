@@ -14,22 +14,21 @@ import java.net.URL;
 
 public class DescripcionRecetaActivity extends AppCompatActivity {
     TextView nombre,ingredientes,preparacion;
-    String _imagen, _nombre,_ingrediente,_preparacion;
     ImageView imagen;
+    String _imagen, _nombre,_ingrediente,_preparacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_descripcion_receta);
+        this.InitControles();
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
 
-        this.InitControles();
-
         Bundle i= getIntent().getExtras();
-        _imagen= i.getString("Imagen");
+        _imagen=i.getString("imagen");
         _nombre=i.getString("titulo");
         _ingrediente=i.getString("ingrediente");
         _preparacion=i.getString("preparacion");
@@ -38,10 +37,10 @@ public class DescripcionRecetaActivity extends AppCompatActivity {
     }
 
     void InitControles(){
+        imagen=findViewById(R.id.foto_receta2);
         nombre=findViewById(R.id.nombre_receta2);
         ingredientes=findViewById(R.id.ingrediente_receta2);
         preparacion=findViewById(R.id.descripcion2);
-        imagen = findViewById(R.id.foto_receta2);
     }
 
     void MostrarDatos(){
@@ -56,7 +55,6 @@ public class DescripcionRecetaActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public void Retornar(View view) {this.finish();}
