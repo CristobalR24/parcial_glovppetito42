@@ -43,6 +43,32 @@
         android:fontFamily="@font/tt_norms_pro_medium"
         android:textSize="20sp"
         android:layout_marginTop="20sp"
+        android:text="Foto del producto(URL)"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/foto_receta"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:background="@drawable/bordes"
+        android:layout_marginTop="10dp"
+        android:padding="5sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textSize="16sp"
+        android:hint="ej.. www.rutadeimagen.com/imagen.jpg"
+        android:imeOptions="actionNext"/>
+
+    <TextView
+        android:textColor="#221D1D"
+        android:fontFamily="@font/tt_norms_pro_medium"
+        android:textSize="20sp"
+        android:layout_marginTop="20sp"
         android:text="Nombre del producto"
         android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
@@ -103,7 +129,7 @@
     <EditText
         android:id="@+id/descripcion"
         android:layout_width="match_parent"
-        android:layout_height="187dp"
+        android:layout_height="150dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
@@ -123,7 +149,7 @@
         android:layout_marginRight="50dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/tt_norms_pro_bold"
         android:textColor="@color/black"
         android:backgroundTint="#FFE033"

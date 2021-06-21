@@ -57,7 +57,7 @@ public class ListaRecetaActivity extends AppCompatActivity {
         { if(TipoRecibido.equals("consumidor"))
            {MenuItem ver = menu.findItem(R.id.mrecetacompleta);
             MenuItem guardar = menu.findItem(R.id.mguardarreceta);
-            ver.setVisible(true);
+            //ver.setVisible(true);
             guardar.setVisible(true); }
         }
     }
@@ -72,6 +72,7 @@ public class ListaRecetaActivity extends AppCompatActivity {
             case R.id.mrecetacompleta:
                 Intent i = new Intent(this.getApplicationContext(),DescripcionRecetaActivity.class);
                 Bundle b=new Bundle();
+                b.putString("imagen",rec.getImagen());
                 b.putString("titulo",rec.getTitulo());
                 b.putString("ingrediente",rec.getIngredientes());
                 b.putString("preparacion",rec.getPreparacion());

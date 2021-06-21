@@ -114,8 +114,7 @@ public class ComidasDBProcess {
                 if(cursor.moveToFirst()){
                     do{
                         Receta receta = new Receta(
-                                //cursor.getString(0),
-                                String.valueOf(R.drawable.ic_launcher_background),
+                                cursor.getString(0),
                                 cursor.getString(1),
                                 cursor.getString(2),
                                 cursor.getString(3)
@@ -224,8 +223,7 @@ public class ComidasDBProcess {
                 if(cursor.moveToFirst()){
                     do{
                         Receta receta = new Receta(
-                                //cursor.getString(0),
-                                String.valueOf(R.drawable.ic_launcher_background),
+                                cursor.getString(0),
                                 cursor.getString(1),
                                 cursor.getString(2),
                                 cursor.getString(3)
@@ -271,15 +269,15 @@ public class ComidasDBProcess {
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public void AgregarReceta(String nombre, String ingrediente,String preparacion) {
+    public void AgregarReceta(String foto, String nombre, String ingrediente,String preparacion) {
         SQLiteDatabase sq = _db.getWritableDatabase();
         if (sq != null){
             try{
                 ContentValues valores = new ContentValues();
-                valores.put("Imagen"," ");
+                valores.put("Imagen", foto);
                 valores.put("Titulo",nombre);
                 valores.put("Ingredientes",ingrediente);
-                valores. put("Preparacion",preparacion);
+                valores.put("Preparacion",preparacion);
 
                 sq.insert("Recetas",null,valores);
 

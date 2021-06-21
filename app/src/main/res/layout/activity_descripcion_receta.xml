@@ -38,38 +38,62 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <TextView
-        android:textColor="#221D1D"
-        android:fontFamily="@font/tt_norms_pro_medium"
-        android:textSize="20sp"
-        android:layout_marginTop="20sp"
-        android:text="Producto:"
-        android:textAlignment="center"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/nombre_receta2"
-        android:fontFamily="@font/tt_norms_pro_medium"
-        android:background="@drawable/bordes"
-        android:layout_marginTop="10dp"
-        android:padding="5sp"
-        android:textSize="18sp"
-        android:layout_gravity="center"
-        android:backgroundTint="#FFE033"
-        android:text="Nombre del producto"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:background="#000000"
+            android:id="@+id/foto_receta2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:scaleX="1"
+            android:padding="0dp"
+            android:scaleY="1"
+            android:src="@drawable/hamburguer" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <TextView
+            android:textColor="#221D1D"
+            android:fontFamily="@font/tt_norms_pro_medium"
+            android:textSize="20sp"
+            android:layout_marginTop="20sp"
+            android:text="Producto:"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/nombre_receta2"
+            android:fontFamily="@font/tt_norms_pro_medium"
+            android:background="@drawable/bordes"
+            android:layout_marginTop="10dp"
+            android:padding="5sp"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:backgroundTint="#FFE033"
+            android:text="Nombre del producto"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:textColor="#221D1D"
         android:fontFamily="@font/tt_norms_pro_medium"
         android:textSize="20sp"
-        android:layout_marginTop="20sp"
         android:textAlignment="center"
         android:text="Ingredientes:"
         android:layout_width="match_parent"
@@ -79,7 +103,7 @@
         android:id="@+id/ingrediente_receta2"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
-        android:layout_height="64dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"

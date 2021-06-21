@@ -14,7 +14,7 @@ import com.example.appparcialkquiel_lsaldana_crodriguez.Data.ComidasDBProcess;
 
 public class AgregarRecetaActivity extends AppCompatActivity {
 
-    EditText nombre_receta, ingrediente_receta, descripcion;
+    EditText nombre_receta, ingrediente_receta, descripcion, fotito;
     Button guardar;
 
     @Override
@@ -30,24 +30,27 @@ public class AgregarRecetaActivity extends AppCompatActivity {
         ingrediente_receta = (EditText)findViewById(R.id.ingrediente_receta);
         descripcion = (EditText)findViewById(R.id.descripcion);
         guardar = (Button)findViewById(R.id.guardar);
+        fotito = (EditText)findViewById(R.id.foto_receta);
     }
 
     public void Guardar_Datos(View view) {
-        String nombre,ingrediente,preparacion;
+        String nombre,ingrediente,preparacion, foto;
         nombre=nombre_receta.getText().toString();
         ingrediente=ingrediente_receta.getText().toString();
         preparacion=descripcion.getText().toString();
+        foto = fotito.getText().toString();
         ComidasDBProcess db=new ComidasDBProcess(this.getApplicationContext());
 
         if(!TextUtils.isEmpty(nombre) && !TextUtils.isEmpty(ingrediente) && !TextUtils.isEmpty(preparacion))
         {   if(db.RecetaYaExtiste(nombre,ingrediente,preparacion))
                 Toast.makeText(this.getApplicationContext(),"Esta receta ya esta en la base de datos",Toast.LENGTH_LONG).show();
             else
-                {db.AgregarReceta(nombre,ingrediente,preparacion);
+                {db.AgregarReceta(foto,nombre,ingrediente,preparacion);
                  Toast.makeText(this.getApplicationContext(),"La receta fue agregada exitosamente",Toast.LENGTH_LONG).show();
                  nombre_receta.setText("");
                  ingrediente_receta.setText("");
-                 descripcion.setText("");}
+                 descripcion.setText("");
+                 fotito.setText("");}
         }
         else
             Toast.makeText(this.getApplicationContext(),"Debe llenar todos los campos",Toast.LENGTH_LONG).show();
